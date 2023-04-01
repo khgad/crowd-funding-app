@@ -1,0 +1,50 @@
+[
+    {
+        "id": 0,
+        "first_name": "khaled",
+        "last_name": "gad",
+        "email": "khaled@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
+    },
+    {
+        "id": 1,
+        "first_name": "arwa",
+        "last_name": "gad",
+        "email": "arwa@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
+    },
+    {
+        "id": 2,
+        "first_name": "yasmen",
+        "last_name": "gad",
+        "email": "smsm@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
+    },
+    {
+        "id": 3,
+        "first_name": "khaled",
+        "last_name": "gad",
+        "email": "k@gmail.com",
+        "password": "123456789",
+        "mobile_phone": "01117846882"
+    },
+    {
+        "id": 4,
+        "first_name": "ahmed",
+        "last_name": "gad",
+        "email": "ahmed@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
+    },
+    {
+        "id": 5,
+        "first_name": "khaled",
+        "last_name": "gad",
+        "email": "kk@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
+    }
+]
