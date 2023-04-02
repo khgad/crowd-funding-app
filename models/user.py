@@ -1,6 +1,10 @@
 import json
+from utils.file_operations import *
 
 class User:
+
+    users_filename = 'data/users.json'
+
     def __init__(self, first_name, last_name, email, password, mobile_phone, id = None):
         self.id = id
         self.first_name = first_name
@@ -23,23 +27,29 @@ class User:
     
     @classmethod
     def find_by_email(cls, email):
-        with open('data/users.json', 'r') as file:
-            users = json.load(file)
-            for user in users:
-                if user['email'] == email:
-                    return cls(**user)
-            return None
+        users = read_json_file(cls.users_filename)
+        for user in users:
+            if user['email'] == email:
+                return cls(**user)
+        return None
+    
     @classmethod
     def find_by_id(cls, id):
-        with open('data/users.json', 'r') as file:
-            users = json.load(file)
-            for user in users:
-                if user['id'] == id:
-                    return cls(**user)
-            return None
+        users = read_json_file(cls.users_filename)
+        for user in users:
+            if user['id'] == id:
+                return cls(**user)
+        return None
     
     def check_password(self, password):
         return self.password == password
+    
+    def save(self):
+        users = read_json_file(self.users_filename)
+        self.id = get_next_id(users)
+        users.append(self.to_dect())
+        write_json_file(self.users_filename, users)
+
         
     # def save(self):
     #     with open('users.json', 'w+') as file:

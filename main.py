@@ -1,7 +1,10 @@
 from controllers.auth_controller import AuthController
+from controllers.project_controller import ProjectController
 from utils.get_valid_input import ValidInput
 from utils.print_table import table_of_options
 
+
+user_input = ValidInput()
 class Colors:
     RESET = "\033[0;0m"
     RED = "\033[0;31m"
@@ -15,10 +18,49 @@ class Colors:
 def print_colored(text, color):
     print(f"{color}{text}{Colors.RESET}")
 
-def main():
+def project_menu(logged_in_user):
+
+    project_controller = ProjectController(logged_in_user)
+
+    while True:
+        choice = table_of_options("Please choose an option", "Create Project", "View Projects", "Edit Project", "Delete Project", "Logout", "Exit")
+
+        if choice == "1":
+
+            # title = input()
+            # description = user_input.get_valid_description()
+            # target_money = user_input.get_valid_target_money()
+            # start_date = user_input.get_valid_start_date()
+            # end_date = user_input.get_valid_end_date()
+
+            project_controller.create_project()
+
+            print_colored("\nProject created successfully\n", Colors.GREEN)
+
+        elif choice == "2":
+            project_controller.view_projects()
+
+        elif choice == "3":
+            project_controller.edit_project()
+
+        elif choice == "4":
+            project_controller.delete_project()
+
+        elif choice == "5":
+            print_colored("\nLogged out successfully\n", Colors.GREEN)
+            break
+
+        elif choice == "6":
+            print_colored("\nThank you for using Crowd-Funding App\n", Colors.GREEN)
+            print_colored("Goodbye ^_^\n", Colors.CYAN)
+            exit()
+
+        else:
+            print_colored("\nInvalid option\n", Colors.RED)
+
+def main_menu():
     
     auth_controller = AuthController()
-    user_input = ValidInput()
 
     print_colored("\nWelcome to the Crowd-Funding App\n", Colors.MAGENTA)
 
@@ -33,6 +75,7 @@ def main():
             user = auth_controller.login(email, password)
             if user:
                 print_colored("\nYou have successfully logged in\n", Colors.GREEN)
+                project_menu(user)
             else:
                 print_colored("\nInvalid email or password\n", Colors.RED)
 
@@ -50,7 +93,8 @@ def main():
             print_colored("\nYou have successfully registered\n", Colors.GREEN)
         
         elif choice == "3":
-            print_colored("\nGoodbye ^_^\n", Colors.CYAN)
+            print_colored("\nThank you for using Crowd-Funding App\n", Colors.GREEN)
+            print_colored("Goodbye ^_^\n", Colors.CYAN)
             exit()
         
         else:
@@ -58,4 +102,4 @@ def main():
     
 
 if __name__ == "__main__":
-    main()
+    main_menu()

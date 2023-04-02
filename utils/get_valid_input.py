@@ -41,4 +41,4 @@ class ValidInput:
                 return password
             else:
                 print(f"\n\033[0;31m{message}\033[0;0m\n")
-
+    
