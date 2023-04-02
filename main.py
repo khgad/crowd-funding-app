@@ -27,13 +27,13 @@ def project_menu(logged_in_user):
 
         if choice == "1":
 
-            # title = input()
-            # description = user_input.get_valid_description()
-            # target_money = user_input.get_valid_target_money()
-            # start_date = user_input.get_valid_start_date()
-            # end_date = user_input.get_valid_end_date()
+            title = user_input.get_valid_title(f"{Colors.RESET}Enter project title: {Colors.BLUE}")
+            description = user_input.get_valid_description(f"{Colors.RESET}Enter project description: {Colors.BLUE}")
+            target_money = user_input.get_valid_target_money(f"{Colors.RESET}Enter project target money: {Colors.BLUE}")
+            start_date = user_input.get_valid_date(f"{Colors.RESET}Enter project start date: {Colors.BLUE}")
+            end_date = user_input.get_valid_date(f"{Colors.RESET}Enter project end date: {Colors.BLUE}", start_date)
 
-            project_controller.create_project()
+            project_controller.create_project(title, description, target_money, start_date, end_date)
 
             print_colored("\nProject created successfully\n", Colors.GREEN)
 

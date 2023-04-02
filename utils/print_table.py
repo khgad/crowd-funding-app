@@ -12,3 +12,6 @@ def table_of_options(title, *options):
     choice = input("| Choice: ")
     return choice
 
+
+def ptojects_table(titles, projects):
+    pass
