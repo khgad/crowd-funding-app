@@ -10,7 +10,7 @@ class ProjectController:
         new_project.save()
         return new_project
     
-    def get_all_projects(self):
+    def get_projects(self):
         projects = Project.get_projects()
         return projects
     

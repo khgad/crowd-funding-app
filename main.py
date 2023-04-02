@@ -1,7 +1,7 @@
 from controllers.auth_controller import AuthController
 from controllers.project_controller import ProjectController
 from utils.get_valid_input import ValidInput
-from utils.print_table import table_of_options
+from utils.print_table import table_of_options, projects_table
 
 
 user_input = ValidInput()
@@ -38,7 +38,10 @@ def project_menu(logged_in_user):
             print_colored("\nProject created successfully\n", Colors.GREEN)
 
         elif choice == "2":
-            project_controller.view_projects()
+            projects = project_controller.get_projects()
+            projects_table(projects)
+            input("press any key to continue...")
+            print()
 
         elif choice == "3":
             project_controller.edit_project()
