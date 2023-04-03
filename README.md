@@ -1,5 +1,13 @@
 # Crowd Funding App
 
+## Video Demo
+
+<br>
+<div align="center">
+  <video src="screenshots/crowd-funding-app-audio.mp4"/>
+</div>
+<br>
+
 ## Overview
 
 The Crowd-Funding Console App is a Python-based console application designed to make fundraising easy for users. With this app, users can create and manage crowdfunding projects without the need for a complicated web platform or a dedicated IT team.
