@@ -62,5 +62,13 @@
         "email": "omar@gmail.com",
         "password": "12345678",
         "mobile_phone": "01117846882"
+    },
+    {
+        "id": 8,
+        "first_name": "adham",
+        "last_name": "essam",
+        "email": "adham@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
     }
 ]

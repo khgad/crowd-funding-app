@@ -32,7 +32,9 @@ def edit_project(project_controller, user_input):
     status = view_projects(project_controller, False)
     if status:
         while True:
-            project_id = input("Select a project id you want to update: ")
+            project_id = input("Select a project id you want to update or n to exit: ")
+            if project_id == "n":
+                break
             status, message = project_controller.is_owner(project_id)
             if status:
                 project = project_controller.get_project_by_id(project_id)

@@ -30,4 +30,5 @@ def exit_app():
     exit()
 
 def logout():
-    pass
+    print_colored("\nLogged out successfully\n", Colors.GREEN)
+    return
