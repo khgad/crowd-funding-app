@@ -54,5 +54,13 @@
         "email": "test@test.com",
         "password": "123456789",
         "mobile_phone": "01117846882"
+    },
+    {
+        "id": 7,
+        "first_name": "omar",
+        "last_name": "ali",
+        "email": "omar@gmail.com",
+        "password": "12345678",
+        "mobile_phone": "01117846882"
     }
 ]
