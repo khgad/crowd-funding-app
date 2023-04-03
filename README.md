@@ -1,12 +1,13 @@
 # Crowd Funding App
 
 ## Video Demo
+<!-- 
+<br>
+<div align="center"> -->
+https://raw.githubusercontent.com/khgad/crowd-funding-app/main/screenshots/crowd-funding-app-audio.mp4
 
-<br>
-<div align="center">
-  <video src="screenshots/crowd-funding-app-audio.mp4"/>
-</div>
-<br>
+<!-- </div>
+<br> -->
 
 ## Overview
 
