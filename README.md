@@ -63,4 +63,4 @@ The Crowd-Funding Console App makes fundraising accessible to everyone. With its
 
 ## Author
 
-[Khaled Gad](linkedin.com/in/khgad)
+[Khaled Gad](https://www.linkedin.com/in/khgad/)
