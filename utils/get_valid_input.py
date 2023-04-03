@@ -68,11 +68,11 @@ class ValidInput:
             else:
                 print(f"\n\033[0;31mPlease enter a valid target money.\033[0;0m\n")
     
-    def get_valid_date(self, prompt_message, not_before = None):
+    def get_valid_date(self, prompt_message, not_before = None, not_after = None):
         date_validator = DateValidator()
         while True:
             date_str = input(prompt_message)
-            status, message = date_validator.is_valid(date_str, not_before)
+            status, message = date_validator.is_valid(date_str, not_before, not_after)
             if status:
                 return date_str
             else:

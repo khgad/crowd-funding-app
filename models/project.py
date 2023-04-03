@@ -29,7 +29,7 @@ class Project:
     def find_by_id(cls, id):
         projects = read_json_file(cls.projects_filename)
         for project in projects:
-            if project['id'] == id:
+            if project['id'] == int(id):
                 return cls(**project)
         return None
     
@@ -42,4 +42,22 @@ class Project:
         projects = read_json_file(self.projects_filename)
         self.id = get_next_id(projects)
         projects.append(self.to_dect())
+        write_json_file(self.projects_filename, projects)
+
+    def update(self):
+        projects = read_json_file(self.projects_filename)
+        for project in projects:
+            if project['id'] == self.id:
+                project['title'] = self.title
+                project['description'] = self.description
+                project['total_target'] = self.total_target
+                project['start_date'] = self.start_date
+                project['end_date'] = self.end_date
+        write_json_file(self.projects_filename, projects)
+
+    def delete(self):
+        projects = read_json_file(self.projects_filename)
+        for project in projects:
+            if project['id'] == self.id:
+                projects.remove(project)
         write_json_file(self.projects_filename, projects)

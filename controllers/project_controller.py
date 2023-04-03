@@ -18,5 +18,23 @@ class ProjectController:
         project = Project.find_by_id(id)
         return project
     
+    def is_owner(self, project_id):
+        project = Project.find_by_id(project_id)
+        if project == None:
+            return (False, "Project not found, Please enter a valid project id.")
+        if project.owner_id != self.user.id:
+            return (False, "You are not the owner of this project.")
+        return (True, "You are the owner of this project.")
+
+    def update_project(self, new_project):
+        new_project.update()
+        return (True, "Project updated successfully")
+    
+    def delete_project(self, project_id):
+        project = Project.find_by_id(project_id)
+        project.delete()
+        return (True, "Project deleted successfully")
+
+    
 
         
