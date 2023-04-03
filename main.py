@@ -35,7 +35,7 @@ def welcome_banner():
 def project_menu(logged_in_user):
     project_controller = ProjectController(logged_in_user)
     while True:
-        choice = table_of_options("Please choose an option", "Create Project", "View Projects", "Edit Project", "Delete Project", "Logout", "Exit")
+        choice = table_of_options(f"Welcome {logged_in_user.first_name}, Your ID = {logged_in_user.id}", "Create Project", "View Projects", "Edit Project", "Delete Project", "Logout", "Exit")
         if choice == "1":
             project_views.create_project(project_controller, user_input)
         elif choice == "2":
@@ -43,7 +43,7 @@ def project_menu(logged_in_user):
         elif choice == "3":
             project_views.edit_project(project_controller, user_input)
         elif choice == "4":
-            project_views.delete_project(project_controller, user_input)
+            project_views.delete_project(project_controller)
         elif choice == "5":
             print_colored("\nLogged out successfully\n", Colors.GREEN)
             break

@@ -88,7 +88,9 @@ def delete_project(project_controller):
     status = view_projects(project_controller, False)
     if status:
         while True:
-            project_id = input("Select a project id you want to delete: ")
+            project_id = input("Select a project id you want to delete or n not exit: ")
+            if project_id == "n":
+                break
             status, message = project_controller.is_owner(project_id)
             if status:
                 project_controller.delete_project(project_id)

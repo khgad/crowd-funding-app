@@ -14,11 +14,11 @@ class ValidInput:
             else:
                 print(f"\n\033[0;31mPlease enter a valid name.\033[0;0m\n")
 
-    def get_valid_email(self, prompt_message):
+    def get_valid_email(self, prompt_message, registration = False):
         email_validator = EmailValidator()
         while True:
             email = input(prompt_message)
-            status, message = email_validator.is_valid(email)
+            status, message = email_validator.is_valid(email, registration)
             if status:
                 return email
             else:
@@ -34,11 +34,11 @@ class ValidInput:
             else:
                 print(f"\n\033[0;31m{message}\033[0;0m\n")
     
-    def get_valid_passwords(self, prompt_message):
+    def get_valid_passwords(self, prompt_message, confirm_password = None):
         password_validator = PasswordValidator()
         while True:
             password = input(prompt_message)
-            status, message = password_validator.is_valid(password)
+            status, message = password_validator.is_valid(password, confirm_password)
             if status:
                 return password
             else:

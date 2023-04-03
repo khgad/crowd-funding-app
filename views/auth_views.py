@@ -15,9 +15,9 @@ def login(auth_controller, user_input):
 def register(auth_controller, user_input):
     first_name = user_input.get_valid_name(f"{Colors.RESET}Enter your first name: {Colors.BLUE}")
     last_name = user_input.get_valid_name(f"{Colors.RESET}Enter your last name: {Colors.BLUE}")
-    email = user_input.get_valid_email(f"{Colors.RESET}Enter your email: {Colors.BLUE}")
+    email = user_input.get_valid_email(f"{Colors.RESET}Enter your email: {Colors.BLUE}", registration = True)
     password = user_input.get_valid_passwords(f"{Colors.RESET}Enter your password: {Colors.BLUE}")
-    # confirm_password = user_input.get_valid_passwords("Confirm your password: {Colors.BLUE}")
+    confirm_password = user_input.get_valid_passwords(f"{Colors.RESET}Confirm your password: {Colors.BLUE}", password)
     mobile_phone = user_input.get_valid_phone(f"{Colors.RESET}Enter your mobile phone number: {Colors.BLUE}")
 
     auth_controller.register(first_name, last_name, email, password, mobile_phone)

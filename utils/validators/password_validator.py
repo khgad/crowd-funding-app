@@ -8,7 +8,7 @@ class PasswordValidator:
         self.symbols = symbols
         self.length = max_length
     
-    def is_valid(self, password):
+    def is_valid(self, password, confirm_password=None):
         status = True
         message = "Invalid password. Please make sure it meets the following criteria:"
         if len(password) < self.length:
@@ -28,7 +28,11 @@ class PasswordValidator:
             status = False
         
         if status:
-            message = "Valid Password"
+            if confirm_password and password!= confirm_password:
+                message = f"Passwords do not match"
+                status = False
+            else:
+                message = "Valid Password"
 
         return (status, message)
         
