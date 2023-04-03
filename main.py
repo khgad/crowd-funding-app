@@ -7,6 +7,31 @@ from utils.colors import *
 
 user_input = ValidInput()
 
+def welcome_banner():
+    banner = f"""{Colors.GREEN}   ______                           __           
+  / ____/_____ ____  _      __ ____/ /           
+ / /    / ___// __ \| | /| / // __  /            
+/ /___ / /   / /_/ /| |/ |/ // /_/ /             
+\____//_/    \____/ |__/|__/ \__,_/              
+                                                 
+    ____                   __ _                  
+   / __/__  __ ____   ____/ /(_)____   ____ _    
+  / /_ / / / // __ \ / __  // // __ \ / __ `/    
+ / __// /_/ // / / // /_/ // // / / // /_/ /     
+/_/   \__,_//_/ /_/ \__,_//_//_/ /_/ \__, /      
+                                    /____/       
+                                                 
+  ____ _ ____   ____                             
+ / __ `// __ \ / __ \                            
+/ /_/ // /_/ // /_/ /                            
+\__,_// .___// .___/                             
+     /_/    /_/                                  
+     {Colors.RESET}\n\n""" + f"""
+     {Colors.YELLOW}By: {Colors.MAGENTA}Khaled Gad{Colors.RESET}\n\n"""
+    
+    
+    print(banner)
+
 def project_menu(logged_in_user):
     project_controller = ProjectController(logged_in_user)
     while True:
@@ -29,7 +54,6 @@ def project_menu(logged_in_user):
 
 def main_menu():
     auth_controller = AuthController()
-    print_colored("\nWelcome to the Crowd-Funding App\n", Colors.MAGENTA)
     while True:
         choice = table_of_options("Please choose an option", "Login", "Register", "Exit")
         if choice == "1":
@@ -44,4 +68,5 @@ def main_menu():
             print_colored("\nInvalid choice, please try again\n", Colors.RED)
 
 if __name__ == "__main__":
+    welcome_banner()
     main_menu()

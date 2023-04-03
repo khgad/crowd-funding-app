@@ -13,7 +13,7 @@ def table_of_options(title, *options):
     print(f"{TABLE_COLOR}|{Colors.RESET}{' '*side_spaces}{Colors.CYAN}{title}{' '*side_spaces}{TABLE_COLOR}|{Colors.RESET}")
     print(f"{TABLE_COLOR}+{'-'*total_length}+{Colors.RESET}")
     for idx, option in enumerate(options):
-        print(f"{TABLE_COLOR}|{Colors.RESET}{' '*side_spaces}{Colors.GREEN}{idx+1} - {Colors.PURPLE}{option}{' '*(title_length-len(option)-4+side_spaces)}{TABLE_COLOR}|{Colors.RESET}")
+        print(f"{TABLE_COLOR}|{Colors.RESET}{' '*side_spaces}{Colors.GREEN}{idx+1} - {Colors.RESET}{option}{' '*(title_length-len(option)-4+side_spaces)}{TABLE_COLOR}|{Colors.RESET}")
     print(f"{TABLE_COLOR}+{'-'*total_length}+{Colors.RESET}")
     choice = input(f"{TABLE_COLOR}|{Colors.RESET} Choice: ")
     print()
