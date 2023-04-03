@@ -29,7 +29,7 @@ class Project:
     def find_by_id(cls, id):
         projects = read_json_file(cls.projects_filename)
         for project in projects:
-            if project['id'] == int(id):
+            if str(project['id']) == id:
                 return cls(**project)
         return None
     
